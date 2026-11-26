@@ -1,0 +1,149 @@
+/* /service/ additions to the shared guide content components. */
+.page-service-intro .service-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 22px;
+}
+.page-service-intro .service-main .service-features {
+  background: #f3fcff;
+}
+.page-service-intro .service-feature {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  transition:
+    transform 0.4s var(--motion-ease),
+    box-shadow 0.4s ease;
+}
+.page-service-intro .service-feature:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+.page-service-intro .service-main .service-feature-heading {
+  grid-template-columns: 88px minmax(0, 1fr);
+  margin-bottom: 16px;
+}
+.page-service-intro .service-feature .top-link {
+  align-self: flex-end;
+  margin-top: auto;
+  padding-top: 14px;
+}
+.page-service-intro .service-feature h3 {
+  text-wrap: balance;
+}
+.page-service-intro .service-main .service-preview {
+  background: #fff;
+}
+.page-service-intro .service-preview::before,
+.page-service-intro .service-preview::after {
+  content: none;
+}
+.page-service-intro .service-preview .container {
+  align-items: start;
+}
+.page-service-intro .service-preview .image-section-copy {
+  padding-top: 8px;
+}
+.page-service-intro .service-preview figure {
+  max-width: none;
+}
+.page-service-intro .service-feature:focus-visible {
+  outline: 3px solid #329dff;
+  outline-offset: 5px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .page-service-intro .service-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 28px #2373ca26;
+  }
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  .page-service-intro .service-feature-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .page-service-intro .service-feature:nth-child(4) {
+    grid-column: span 2;
+  }
+  .page-service-intro .service-feature:last-child {
+    grid-column: 2 / span 2;
+  }
+}
+@media (max-width: 767px) {
+  .page-service-intro .service-feature-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .page-service-intro .service-feature,
+  .page-service-intro .service-feature:nth-child(4) {
+    grid-column: auto;
+  }
+  .page-service-intro .service-main .service-feature-heading {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-service-intro .service-feature {
+    transition: none;
+  }
+  .page-service-intro .service-feature:hover {
+    transform: none;
+  }
+}
+
+/* Keep Japanese phrases and step labels together without rigid viewport breaks. */
+.page-service-intro .service-phrase {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+.page-service-intro .service-main :is(p, h2, h3) {
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.page-service-intro .service-main .guide-concern-grid p {
+  font-size: clamp(15px, 1.25vw, 17px);
+}
+.page-service-intro .service-main .guide-step-grid li > div {
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 12px;
+}
+.page-service-intro .service-main .guide-step-grid img {
+  width: 64px;
+  height: 64px;
+}
+.page-service-intro .service-main .guide-step-grid h3 {
+  font-size: 18px;
+  letter-spacing: 0;
+}
+.page-service-intro .service-step-line {
+  display: block;
+}
+.page-service-intro .service-main .service-feature-heading {
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 12px;
+}
+.page-service-intro .service-main .service-feature-heading h3 {
+  padding-left: 14px;
+  font-size: 18px;
+  text-wrap: pretty;
+}
+.page-service-intro .service-feature-heading .service-phrase {
+  display: inline-block;
+}
+.page-service-intro .service-feature[href='/features/delivery/'] h3 .service-phrase {
+  display: block;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .page-service-intro .guide-concern-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .page-service-intro .service-main .service-feature-heading {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+  .page-service-intro .service-main .guide-concern-grid p {
+    font-size: 16px;
+  }
+}

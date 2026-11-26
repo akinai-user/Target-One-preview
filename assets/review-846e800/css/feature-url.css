@@ -1,0 +1,180 @@
+/* /features/url/ — page-specific tables and decorative target marks. */
+.page-feature-url .url-main .url-table-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #fff;
+}
+.page-feature-url .url-table-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: clamp(240px, 28vw, 430px);
+  aspect-ratio: 1;
+  background: url('../images/features/url-target.svg') center / contain no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.page-feature-url .url-examples::before {
+  top: -48px;
+  left: -112px;
+}
+.page-feature-url .url-plans::before {
+  right: -75px;
+  bottom: -50px;
+}
+.page-feature-url .url-main .url-table-section h2 {
+  margin-bottom: 42px;
+}
+.page-feature-url .url-table-wrap {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid #d2e2f7;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px #164a861c;
+  background: #fff;
+}
+.page-feature-url .url-table-wrap:focus-visible {
+  outline: 3px solid #329dff;
+  outline-offset: 5px;
+}
+.page-feature-url .url-main .url-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--guide-body);
+  line-height: 1.8;
+}
+.page-feature-url .url-examples-table {
+  min-width: 900px;
+}
+.page-feature-url .url-kind-col {
+  width: 28%;
+}
+.page-feature-url .url-example-col {
+  width: 39%;
+}
+.page-feature-url .url-audience-col {
+  width: 33%;
+}
+.page-feature-url .url-plan-col {
+  width: 42%;
+}
+.page-feature-url .url-main .url-table :is(th, td) {
+  padding: 19px 24px;
+  border: 0;
+  border-right: 1px solid #d8e6f7;
+  border-bottom: 1px solid #d8e6f7;
+  text-align: left;
+  vertical-align: middle;
+  white-space: normal;
+  line-break: strict;
+  overflow-wrap: normal;
+}
+.page-feature-url .url-table thead {
+  color: #fff;
+  background:
+    linear-gradient(135deg, transparent 87%, #0951af 87.2%, #0b3370 93%, transparent 93.2%),
+    linear-gradient(#184b90, #092650);
+}
+.page-feature-url .url-main .url-table thead th {
+  background: transparent;
+  color: #fff;
+  font-size: var(--guide-card-title);
+  font-weight: 800;
+  border-right-color: #7699c8;
+}
+.page-feature-url .url-main .url-table tbody th {
+  min-width: 0;
+  color: #072653;
+  background: #edf4fc;
+  font-size: var(--guide-card-title);
+  font-weight: 800;
+}
+.page-feature-url .url-table td {
+  color: #080f2c;
+  background: #fff;
+}
+.page-feature-url .url-main .url-table tr > :last-child {
+  border-right: 0;
+}
+.page-feature-url .url-main .url-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.page-feature-url .url-main .url-plan-table {
+  min-width: 0;
+}
+.page-feature-url .url-main .url-plan-table tbody :is(th, td) {
+  padding-block: 12px;
+}
+.page-feature-url .url-plan-table strong {
+  color: #071f68;
+  font-size: 1.5em;
+  font-weight: 900;
+  line-height: 1;
+}
+.page-feature-url .url-main .url-statement h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  margin-bottom: 24px;
+}
+.page-feature-url .url-main .url-statement p + p {
+  margin-top: 0;
+}
+.page-feature-url .url-main .url-statement p {
+  max-width: 1100px;
+}
+.page-feature-url .url-scroll-hint {
+  display: none;
+}
+@media (max-width: 979px) {
+  .page-feature-url .url-main .url-scroll-hint {
+    display: block;
+    margin: 0 0 12px;
+    color: #42597b;
+    font-size: 13px;
+    text-align: right;
+  }
+}
+@media (max-width: 767px) {
+  .page-feature-url .url-main .url-table-section h2 {
+    margin-bottom: 28px;
+  }
+  .page-feature-url .url-main .url-table :is(th, td) {
+    padding: 16px 18px;
+  }
+  .page-feature-url .url-main .url-plan-table :is(th, td) {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+  .page-feature-url .url-plan-col {
+    width: 52%;
+  }
+  .page-feature-url .url-main .url-plan-table strong {
+    font-size: 1.6em;
+  }
+  .page-feature-url .url-hero-separator {
+    display: none;
+  }
+  .page-feature-url .shared-hero h1 > .url-hero-label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .page-feature-url .url-table-section::before {
+    opacity: 0.08;
+  }
+}
+
+/* Preserve Japanese word groups and keep numbers attached to their units. */
+.page-feature-url .url-main .url-table .guide-phrase {
+  text-wrap: nowrap;
+}
+.page-feature-url .url-quantity {
+  white-space: nowrap;
+}
+.page-feature-url .url-plan-table tbody th {
+  white-space: nowrap;
+}
+.page-feature-url .shared-hero .shared-hero-lead {
+  text-wrap: pretty;
+}

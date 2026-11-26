@@ -1,0 +1,885 @@
+/* Shared guide/service content: consistent type, cards, spacing and FAQ. */
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) {
+  --guide-scale: min(1vw, 14.58px);
+  --guide-heading: clamp(26px, 2.55vw, 34px);
+  --guide-card-title: clamp(18px, 1.5vw, 20px);
+  --guide-body: clamp(15px, 1.2vw, 17px);
+  --guide-section-space: clamp(56px, 6vw, 88px);
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-main {
+  color: #080f2c;
+  font-size: var(--guide-body);
+  font-weight: 400;
+  line-height: 1.85;
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  :is(p, h2, h3) {
+  text-wrap: pretty;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-phrase {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-title-line {
+  display: block;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-mobile-break {
+  display: none;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .container {
+  width: min(1200px, calc(100% - 80px));
+  max-width: none;
+  margin-inline: auto;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-main .section {
+  padding: var(--guide-section-space) 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-main h2,
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  h2:not(:first-child) {
+  margin: 0 0 32px;
+  text-align: center;
+  font-size: var(--guide-heading);
+  font-weight: 800;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-main h3 {
+  font-size: var(--guide-card-title);
+  font-weight: 800;
+  line-height: 1.5;
+  margin: 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-main p {
+  margin: 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-main p + p {
+  margin-top: 18px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  :is(ul, ol) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-main .buttons {
+  justify-content: center;
+  gap: 22px;
+  margin: 32px 0 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .top-button {
+  min-width: 240px;
+  min-height: 58px;
+  padding: 13px 28px;
+  font-size: 17px;
+  font-weight: 800;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-main .top-link {
+  font-size: 16px;
+  font-weight: 800;
+  margin-top: 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-blue {
+  position: relative;
+  isolation: isolate;
+  color: #fff;
+}
+
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-title-accent {
+  display: inline;
+  font-size: 1.14em;
+  font-style: italic;
+  padding: 0.1em 0.13em;
+  margin: -0.1em -0.13em;
+  letter-spacing: -0.04em;
+}
+/* WebKit does not clip a parent's text background into inline-block children.
+   Paint the gradient on each phrase as well, preserving its line-break behavior. */
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-title-accent,
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-title-accent
+  .guide-phrase {
+  color: #58e4f8;
+  background: linear-gradient(#c5f6fa 12%, #16d2f0 83%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-title-question {
+  font-size: 0.95em;
+  margin-left: 0.15em;
+}
+
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-light {
+  background: #edf6ff url('../images/top/light-background.webp') center / 100% 100% no-repeat;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .guide-concerns {
+  padding: var(--guide-section-space) 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-concerns
+  .container,
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-benefits
+  .container {
+  width: min(1200px, calc(100% - 80px));
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-concerns h2 {
+  margin-bottom: 40px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-concern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 20px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-concern-grid
+  li {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  padding: 24px 20px;
+  min-height: 144px;
+  border-radius: 24px;
+  background: #ffffffee;
+  box-shadow: 0 20px 28px #1765c326;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-concern-grid
+  img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-concern-grid p {
+  padding-left: 16px;
+  border-left: 2px solid #329aff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .guide-statement {
+  padding: 56px 0;
+  min-height: 0;
+  text-align: center;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-statement h2 {
+  color: #ff9700;
+  font-size: var(--guide-heading);
+  font-style: italic;
+  letter-spacing: -0.025em;
+  text-shadow: 0 3px 3px #000b;
+  margin-bottom: 22px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-statement p {
+  font-size: var(--guide-body);
+  line-height: 1.8;
+  font-weight: 500;
+  max-width: 960px;
+  margin-inline: auto;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .guide-benefits {
+  padding: var(--guide-section-space) 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 20px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit {
+  border-radius: 24px;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, #f2f8ffdd, #e3f2ffbb),
+    url('../images/top/light-background.webp') center / cover;
+  box-shadow: 0 18px 30px #498edc12;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit > div {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  min-height: 90px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit h3 {
+  border-left: 2px solid #329aff;
+  padding-left: 18px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit p {
+  font-size: var(--guide-body);
+  line-height: 1.85;
+  padding-inline: 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .guide-preview {
+  padding: var(--guide-section-space) 0;
+  background: #f2f7ff;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-preview::before,
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-preview::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 850px;
+  height: 190px;
+  border: 1px solid #fff;
+  background: #ffffff48;
+  border-radius: 50%;
+  transform: rotate(-26deg);
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-preview::before {
+  top: -100px;
+  left: -300px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-preview::after {
+  bottom: -90px;
+  right: -300px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-preview
+  .container {
+  width: min(1000px, calc(100% - 13.2%));
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-preview h2 {
+  text-align: left;
+  font-size: var(--guide-heading);
+  margin: 0 0 17px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-preview p {
+  font-size: var(--guide-body);
+  font-weight: 400;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-preview figure {
+  margin: 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-preview img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 15px 30px #164a861c;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-preview
+  figcaption {
+  font-size: 12px;
+  margin-top: 7px;
+  color: #606b7b;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .guide-comparison {
+  padding: var(--guide-section-space) 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-comparison h2 {
+  margin-bottom: 32px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-table-wrap {
+  overflow: auto;
+  border: 1px solid #d2e2f7;
+  border-radius: 18px;
+  box-shadow: 0 12px 24px #164a860d;
+  margin-bottom: 24px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-comparison
+  table {
+  width: 100%;
+  min-width: 880px;
+  border-spacing: 0;
+  border-collapse: separate;
+  font-size: var(--guide-body);
+  line-height: 1.5;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-comparison
+  :is(th, td) {
+  padding: 16px 20px;
+  border: 0;
+  border-right: 1px solid #d2e2f7;
+  border-bottom: 1px solid #d2e2f7;
+  background: transparent;
+  text-align: left;
+  white-space: normal;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-comparison
+  thead {
+  background: linear-gradient(#18467f, #07274f);
+  color: #fff;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-comparison
+  thead
+  th {
+  font-size: var(--guide-body);
+  font-weight: 700;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-comparison
+  tbody
+  th {
+  font-weight: 700;
+  background: #f1f6fc;
+  min-width: 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-comparison
+  .guide-highlight {
+  background: #ffead5;
+  font-weight: 800;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-highlight
+  :is(th, td) {
+  border-block: 1px solid #ff8300;
+  padding: 16px 20px;
+  font-size: var(--guide-body);
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-comparison
+  .guide-highlight
+  th {
+  color: #fff;
+  background: linear-gradient(#ffac16, #ff6a00);
+  font-size: var(--guide-body);
+  white-space: normal;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-comparison
+  tr:last-child
+  > * {
+  border-bottom: 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-comparison p {
+  font-size: var(--guide-body);
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-comparison
+  p
+  a:hover {
+  text-decoration: underline;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .guide-cases {
+  padding: var(--guide-section-space) 0;
+  background: #f0f6ff;
+  text-align: center;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-cases
+  .container {
+  width: min(1200px, calc(100% - 80px));
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-cases h2 {
+  margin-bottom: 8px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-cases
+  .top-link {
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 56px;
+  padding: 12px 28px;
+  border: 2px solid var(--top-blue);
+  border-radius: 100px;
+  background: #fff;
+  box-shadow: 0 4px 12px #064bff12;
+  transition:
+    transform 0.4s var(--motion-ease),
+    box-shadow 0.4s ease;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-cases
+  .top-link::after {
+  content: none;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-cases
+  .top-link:hover {
+  box-shadow: 0 6px 16px #064bff20;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-cases
+  .top-link:focus-visible {
+  outline: 3px solid #329dff;
+  outline-offset: 4px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case-lead {
+  font-size: var(--guide-body);
+  font-weight: 500;
+  margin-bottom: 24px !important;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 20px;
+  margin-bottom: 22px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case {
+  overflow: hidden;
+  border: 1px solid #cfe0fc;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 12px 22px #226dd512;
+  text-align: left;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 360 / 116;
+  object-fit: cover;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case > div {
+  padding: 20px 24px 24px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case h3 {
+  font-size: var(--guide-card-title);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case p {
+  font-size: var(--guide-body);
+  line-height: 1.85;
+  color: #35405b;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .guide-start {
+  padding: var(--guide-section-space) 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-start h2 {
+  margin-bottom: 30px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-step-grid li {
+  color: #fff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  background:
+    linear-gradient(
+      135deg,
+      transparent 85%,
+      #0875fa 85.2%,
+      #023578 90%,
+      #0066ef 90.2%,
+      transparent 94%
+    ),
+    linear-gradient(130deg, #074d9e, #001d44 55%, #003b80);
+  box-shadow: 0 8px 14px #164a860a;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-step-grid
+  li
+  > div {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  min-height: 80px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-step-grid img {
+  width: 76px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-step-grid h3 {
+  border-left: 1px solid #c9ecff;
+  padding-left: 12px;
+  font-size: var(--guide-card-title);
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-step-grid p {
+  font-size: var(--guide-body);
+  line-height: 1.8;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .guide-faq {
+  background: #f4f8ff;
+  padding: var(--guide-section-space) 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-faq .container {
+  width: min(955px, calc(100% - 13.2%));
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-faq h2 {
+  font-size: var(--guide-heading);
+  margin-bottom: 30px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-faq .faq {
+  margin: 0 0 15px;
+  border: 2px solid #d8e9ff;
+  border-radius: 12px;
+  background: #ebf7ff;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-faq
+  .faq:last-child {
+  margin-bottom: 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-faq summary {
+  min-height: 67px;
+  padding: 14px 54px 14px 20px;
+  font-size: var(--guide-body);
+  gap: 15px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-faq
+  summary
+  > span {
+  width: 36px;
+  height: 36px;
+  font-size: 29px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #7ba6ce, #001b3e 70%);
+  font-family: Georgia, serif;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-faq
+  summary
+  > .guide-faq-question {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  height: auto;
+  color: inherit;
+  background: none;
+  border-radius: 0;
+  font: inherit;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-faq
+  summary::after {
+  color: #064bff;
+  font-size: 25px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+  .guide-main
+  .guide-invitation {
+  text-align: center;
+  padding: 64px 0;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-invitation h2 {
+  font-size: var(--guide-heading);
+  margin-bottom: 34px;
+}
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-invitation p {
+  font-size: var(--guide-body);
+  font-weight: 500;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-concern-grid
+    li {
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 16px;
+    padding: 24px 20px;
+    min-height: 144px;
+    border-radius: 24px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-concern-grid
+    img {
+    width: 80px;
+    height: 80px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-concern-grid
+    p {
+    padding-left: 16px;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit {
+    padding: 24px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-benefit
+    > div {
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+    min-height: 90px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit img {
+    width: 80px;
+    height: 80px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit p {
+    padding: 0;
+    font-size: var(--guide-body);
+    padding-inline: 0;
+    line-height: 1.85;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-step-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+@media (max-width: 767px) {
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-main
+    .container,
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-main
+    :is(
+      .guide-concerns,
+      .guide-benefits,
+      .guide-preview,
+      .guide-cases,
+      .guide-faq,
+      .guide-service,
+      .guide-company
+    )
+    .container {
+    width: calc(100% - 36px);
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-main
+    .section {
+    padding: var(--guide-section-space) 0;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-main h2,
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-main
+    h2:not(:first-child) {
+    font-size: var(--guide-heading);
+    margin-bottom: 28px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-main h3 {
+    font-size: var(--guide-card-title);
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-main
+    .buttons {
+    gap: 13px;
+    flex-direction: column;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-main
+    .top-button {
+    min-width: 240px;
+    width: min(100%, 360px);
+    min-height: 58px;
+    font-size: 17px;
+    padding-inline: 20px;
+    padding: 13px 28px;
+  }
+
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-mobile-break {
+    display: initial;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-title-accent {
+    font-size: 1.1em;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-title-question {
+    white-space: nowrap;
+  }
+
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-desktop-break {
+    display: none;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-concern-grid,
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit-grid,
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-preview
+    .container,
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case-grid,
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-step-grid,
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-service-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-concern-grid
+    li {
+    padding: 22px 18px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 144px;
+    border-radius: 24px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-concern-grid
+    img {
+    width: 64px;
+    height: 64px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-concern-grid
+    p {
+    padding-left: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-concern-grid
+    p
+    br {
+    display: none;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-statement p {
+    font-size: var(--guide-body);
+    line-height: 1.9;
+    font-weight: 500;
+    max-width: 960px;
+    margin-inline: auto;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit {
+    padding: 24px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-benefit
+    > div {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+    min-height: 90px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit img {
+    width: 64px;
+    height: 64px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit h3 {
+    padding-left: 14px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit p {
+    padding: 0;
+    font-size: var(--guide-body);
+    line-height: 1.85;
+    padding-inline: 0;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-preview h2 {
+    text-align: left;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-preview img {
+    margin-top: 5px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-comparison
+    table {
+    font-size: var(--guide-body);
+    min-width: 830px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-comparison p {
+    font-size: var(--guide-body);
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case-lead {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case h3 {
+    font-size: var(--guide-card-title);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-case p {
+    font-size: var(--guide-body);
+    line-height: 1.85;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-step-grid li {
+    padding: 24px 20px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-step-grid
+    li
+    > div {
+    grid-template-columns: 76px minmax(0, 1fr);
+    margin-bottom: 20px;
+    gap: 12px;
+    min-height: 80px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-step-grid h3 {
+    font-size: var(--guide-card-title);
+    padding-left: 12px;
+    line-height: 1.5;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-step-grid
+    h3
+    br {
+    display: none;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-step-grid p {
+    font-size: var(--guide-body);
+    line-height: 1.8;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-faq summary {
+    font-size: var(--guide-body);
+    padding-left: 12px;
+    gap: 10px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area)
+    .guide-faq
+    summary
+    > span {
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+  }
+  :is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-invitation p {
+    font-size: var(--guide-body);
+    line-height: 1.9;
+    font-weight: 500;
+  }
+}
+
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-desktop-break,
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-concern-grid br,
+:is(.page-guide, .page-service-intro, .page-feature-url, .page-feature-area) .guide-benefit h3 br {
+  display: none;
+}

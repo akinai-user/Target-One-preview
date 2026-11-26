@@ -1,0 +1,548 @@
+/* Shared motion. Content stays readable without JavaScript. */
+.top-page {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.top-reveal {
+  transition:
+    opacity 0.7s ease var(--reveal-delay, 0ms),
+    translate 0.85s var(--motion-ease) var(--reveal-delay, 0ms);
+}
+.top-reveal-pending {
+  opacity: 0;
+  translate: 0 14px;
+}
+.top-counter {
+  display: inline-grid;
+  font-variant-numeric: tabular-nums;
+  vertical-align: baseline;
+}
+.top-counter > span {
+  grid-area: 1 / 1;
+  text-align: right;
+  background: linear-gradient(#b5efed 0%, #31d5e1 35%, #00b5dc 61%, #0051c0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.top-hero-stats strong .top-counter,
+.top-hero-stats strong .top-counter > span {
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+.top-counter-measure {
+  visibility: hidden;
+}
+.top-counter-accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Procedural light fields replace the static blue background image. */
+.top-dark {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-image: linear-gradient(125deg, #00132f, #003568 60%, #001b45);
+}
+.top-dark::before,
+.top-dark::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  inset: -18%;
+}
+.top-dark::before {
+  background:
+    radial-gradient(ellipse at 18% 35%, #008cff65, transparent 46%),
+    radial-gradient(ellipse at 78% 65%, #00c8ff38, transparent 42%),
+    linear-gradient(125deg, transparent 44%, #197aff30 48%, #4bdfff45 49%, transparent 50%);
+  animation: top-light-drift 12s ease-in-out infinite alternate paused;
+}
+.top-dark::after {
+  background: repeating-linear-gradient(
+    125deg,
+    transparent 0 190px,
+    #4aaaff12 191px,
+    transparent 193px 310px
+  );
+  animation: top-line-drift 22s ease-in-out infinite alternate paused;
+}
+.top-hero::after {
+  inset: -12%;
+  animation: top-light-drift 18s ease-in-out infinite alternate paused;
+}
+.top-motion-visible::before,
+.top-motion-visible::after {
+  animation-play-state: running;
+}
+.top-hero-visual img {
+  animation: top-float 7s ease-in-out infinite paused;
+}
+.top-motion-visible .top-hero-visual img {
+  animation-play-state: running;
+}
+.page-guide .guide-preview img {
+  animation: top-float 7s ease-in-out infinite paused;
+}
+.page-guide .guide-preview.top-motion-visible img {
+  animation-play-state: running;
+}
+.sub-page .page-hero-visual > img:is([src*='hero-laptop'], [src*='solution-'], [src*='method-']) {
+  animation: top-float 7s ease-in-out infinite paused;
+}
+.sub-page .top-motion-visible .page-hero-visual > img {
+  animation-play-state: running;
+}
+.page-guide .guide-service-card:focus-visible {
+  outline: 3px solid #329dff;
+  outline-offset: 5px;
+}
+.page-guide .guide-service-card:focus-visible .top-link::after {
+  transform: scaleX(1);
+}
+.top-results::before,
+.top-results::after {
+  animation: top-orbit 50s linear infinite paused;
+}
+.top-results::after {
+  animation-direction: reverse;
+}
+.top-results.top-motion-visible::before,
+.top-results.top-motion-visible::after {
+  animation-play-state: running;
+}
+.top-benefit-grid img {
+  animation: top-float 6s ease-in-out infinite paused;
+}
+.top-benefit-grid li:nth-child(2) img {
+  animation-delay: -2s;
+}
+.top-benefit-grid li:nth-child(3) img {
+  animation-delay: -4s;
+}
+.top-motion-visible .top-benefit-grid img {
+  animation-play-state: running;
+}
+
+.top-button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.35s var(--motion-ease),
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+.top-button::after {
+  content: '';
+  position: absolute;
+  inset: -60% -30%;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, #ffffff50 50%, transparent 65%);
+  transform: translateX(-110%);
+  transition: transform 0.7s var(--motion-ease);
+}
+.top-button span,
+.top-link span,
+.top-card-link span {
+  display: inline-block;
+  transition: transform 0.35s var(--motion-ease);
+}
+.top-industry-card {
+  transition:
+    opacity 0.7s ease var(--reveal-delay, 0ms),
+    translate 0.85s var(--motion-ease) var(--reveal-delay, 0ms),
+    transform 0.45s var(--motion-ease),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+@keyframes top-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.top-industry-card > img {
+  transition: transform 0.65s var(--motion-ease);
+}
+.top-page .top-link,
+.top-page .top-link:hover,
+.top-page .top-link:focus-visible {
+  text-decoration: none;
+}
+.top-link,
+.top-card-link {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+}
+.top-link::after,
+.top-card-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--motion-ease);
+}
+.top-link:focus-visible::after,
+.top-industry-card:focus-visible .top-card-link::after {
+  transform: scaleX(1);
+}
+.top-button:focus-visible,
+.top-industry-card:focus-visible {
+  outline: 3px solid #329dff;
+  outline-offset: 5px;
+}
+.top-button:focus-visible::after {
+  transform: translateX(110%);
+}
+.top-faq-list summary::after {
+  transition: transform 0.3s var(--motion-ease);
+}
+.top-faq-list details[open] summary::after {
+  transform: rotate(180deg);
+}
+@media (hover: hover) and (pointer: fine) {
+  .top-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px #001a5233;
+  }
+  .top-button:hover::after {
+    transform: translateX(110%);
+  }
+  .top-button:hover span {
+    transform: translateX(5px);
+  }
+  .top-link:hover::after,
+  .top-industry-card:hover .top-card-link::after {
+    transform: scaleX(1);
+  }
+  .top-industry-card:hover {
+    transform: translateY(-6px);
+    border-color: #73abff;
+    box-shadow: 0 18px 36px #1454a426;
+  }
+  .top-industry-card:hover > img {
+    transform: scale(1.06);
+  }
+}
+.top-button:active {
+  transform: translateY(0);
+}
+@keyframes top-light-drift {
+  from {
+    transform: translate3d(-2%, -1%, 0) rotate(-2deg);
+  }
+  to {
+    transform: translate3d(4%, 3%, 0) rotate(3deg);
+  }
+}
+@keyframes top-line-drift {
+  from {
+    transform: translate3d(-3%, 0, 0);
+  }
+  to {
+    transform: translate3d(4%, 2%, 0);
+  }
+}
+@keyframes top-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* Lower pages share the same motion without an opening loader. */
+.sub-page .button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.35s var(--motion-ease),
+    box-shadow 0.35s ease,
+    filter 0.35s ease;
+}
+.sub-page .button::after {
+  content: '';
+  position: absolute;
+  inset: -60% -30%;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, #ffffff50 50%, transparent 65%);
+  transform: translateX(-110%);
+  transition: transform 0.7s var(--motion-ease);
+}
+.sub-page .text-link {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+}
+.sub-page .text-link:hover {
+  text-decoration: none;
+}
+.sub-page .text-link::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--motion-ease);
+}
+.sub-page .card,
+.sub-page .news-item {
+  transition:
+    opacity 0.7s ease var(--reveal-delay, 0ms),
+    translate 0.85s var(--motion-ease) var(--reveal-delay, 0ms),
+    transform 0.45s var(--motion-ease),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+.sub-page .card-photo,
+.sub-page .card-arrow {
+  transition: transform 0.6s var(--motion-ease);
+}
+.sub-page:not(.page-article, .page-legal, .page-term) .page-hero,
+.sub-page .final-cta.navy {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-image: linear-gradient(125deg, #00132f, #003568 60%, #001b45);
+}
+.sub-page:not(.page-article, .page-legal, .page-term) .page-hero::before,
+.sub-page .final-cta.navy::before {
+  content: '';
+  position: absolute;
+  inset: -18%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 18% 35%, #008cff65, transparent 46%),
+    radial-gradient(ellipse at 78% 65%, #00c8ff38, transparent 42%),
+    linear-gradient(125deg, transparent 44%, #197aff30 48%, #4bdfff45 49%, transparent 50%);
+  animation: top-light-drift 12s ease-in-out infinite alternate paused;
+}
+.sub-page .page-hero.top-motion-visible::before,
+.sub-page .final-cta.navy.top-motion-visible::before {
+  animation-play-state: running;
+}
+.sub-page :is(.button, .text-link, a.card, a.news-item):focus-visible {
+  outline: 2px solid #329dff;
+  outline-offset: 5px;
+}
+.sub-page .text-link:focus-visible::after {
+  transform: scaleX(1);
+}
+.sub-page a.card:focus-visible .card-arrow::after {
+  transform: scaleX(1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .sub-page .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px #001a5233;
+  }
+  .sub-page .button:hover::after {
+    transform: translateX(110%);
+  }
+  .sub-page .text-link:hover::after {
+    transform: scaleX(1);
+  }
+  .sub-page a.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px #1454a426;
+  }
+  .sub-page a.card:hover .card-photo {
+    transform: scale(1.04);
+  }
+  .sub-page a.card:hover .card-arrow {
+    transform: translateX(4px);
+  }
+  .sub-page a.card:hover .card-arrow::after {
+    transform: scaleX(1);
+  }
+}
+.sub-page .button:active {
+  transform: none;
+}
+
+/* Content controls: a colour wash grows from the upper-left corner. */
+.top-page main :is(.top-button, .button, a.top-link, a.text-link) {
+  position: relative;
+  isolation: isolate;
+  --control-wash: #dceaff;
+  transition:
+    transform 0.4s var(--motion-ease),
+    box-shadow 0.4s ease,
+    filter 0.4s ease;
+}
+.top-page main :is(.top-button-orange, .button.orange) {
+  --control-wash: #d94708;
+}
+.top-page main :is(.top-button, .button, a.top-link, a.text-link)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--control-wash);
+  clip-path: circle(0% at 0 0);
+  pointer-events: none;
+  transition: clip-path 0.55s var(--motion-ease);
+}
+.top-page main :is(a.top-link, a.text-link):not(.guide-cases .top-link)::before {
+  inset: -5px -8px;
+  border-radius: 6px;
+}
+.top-page main .shared-company .top-link::before {
+  content: none;
+}
+.top-page main :is(.top-button, .button, a.top-link, a.text-link):focus-visible::before {
+  clip-path: circle(150% at 0 0);
+}
+.top-page main :is(.top-link, .top-card-link) > b {
+  display: inline-block;
+  transition: transform 0.35s var(--motion-ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .top-page main :is(.top-button, .button, a.top-link, a.text-link):not(:disabled):hover::before {
+    clip-path: circle(150% at 0 0);
+  }
+  .top-page main :is(.top-button, .button):not(:disabled):hover {
+    transform: translateY(-4px);
+    filter: none;
+    box-shadow: 0 12px 26px #001a5229;
+  }
+  .top-page main :is(.top-button, a.top-link, a.text-link):hover > :is(span, b) {
+    transform: translateX(7px);
+  }
+  .top-page main :is(a.top-link, a.text-link):hover {
+    transform: translateY(-2px);
+  }
+  .top-page
+    main
+    :is(a.card, .top-industry-card, .shared-service-card):hover
+    :is(.top-link, .top-card-link)
+    > :is(span, b) {
+    transform: translateX(7px);
+  }
+}
+.top-page main :is(.top-button, .button, a.top-link, a.text-link):active {
+  transform: translateY(0);
+}
+
+/* A quiet logo introduction, followed by the first-view entrance. */
+.top-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  pointer-events: none;
+  transition:
+    opacity 0.5s cubic-bezier(0.62, 0.01, 0.24, 0.99),
+    visibility 0.5s;
+  animation: top-loader-failsafe 0s 4s forwards;
+}
+.top-loader[hidden] {
+  display: none;
+}
+.top-loader-leaving {
+  opacity: 0;
+  visibility: hidden;
+}
+.top-loader-logo {
+  width: clamp(200px, 22vw, 280px);
+  height: auto;
+  opacity: 0;
+  animation: top-loader-logo 2.7s cubic-bezier(0.62, 0.01, 0.24, 0.99) 0.2s both;
+}
+@keyframes top-loader-logo {
+  0% {
+    opacity: 0;
+  }
+  37%,
+  56% {
+    opacity: 1;
+  }
+  93%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes top-loader-failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media (max-width: 767px) {
+  .top-page .top-hero h1 {
+    font-size: clamp(34px, 11.7vw, 44px);
+  }
+}
+/* Pin the backdrop while the document scroll reveals each statement in order. */
+.top-statement.top-statement-scroll {
+  padding: 0;
+  height: calc(var(--statement-height) + var(--statement-distance));
+  overflow: visible;
+  background: none;
+}
+.top-statement-scroll::before,
+.top-statement-scroll::after {
+  content: none;
+}
+.top-statement-scroll .top-statement-stage {
+  position: sticky;
+  top: var(--statement-offset);
+  height: var(--statement-height);
+  display: grid;
+  align-items: center;
+  padding: calc(32px + var(--statement-header)) 0 96px;
+}
+.top-statement-scroll .top-container {
+  gap: clamp(16px, 3vh, 30px);
+}
+.top-statement-scroll .top-container > * {
+  opacity: var(--statement-opacity, 0);
+  transform: translateY(var(--statement-shift, 18px));
+}
+.top-statement-scroll p {
+  font-size: clamp(16px, 2.1vw, 28px);
+  line-height: 1.7;
+}
+.top-page .top-statement-scroll h2 {
+  font-size: clamp(24px, 3.2vw, 42px);
+  line-height: 1.5;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .top-page *,
+  .top-page *::before,
+  .top-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .top-reveal-pending {
+    opacity: 1;
+    translate: none;
+  }
+  .top-page main :is(.top-button, .button, a.top-link, a.text-link),
+  .top-page main :is(.top-button, .top-link, .top-card-link, .text-link) > :is(span, b) {
+    transform: none !important;
+  }
+}
